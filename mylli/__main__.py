@@ -1,7 +1,7 @@
 import sys
 import os
 import argparse
-from .model import MailingList, Mail
+from .model import MailingList, Email, sMail
 from loguru import logger as log
 from platform import uname
 import random
@@ -74,7 +74,7 @@ def main():
         recipients = str(input("Recipients, separate with comma: "))
 
         for to in recipients.split(","):
-            mail_obj = Mail(mFrom, to, subject, body)
+            mail_obj = sMail(Email(mFrom), Email(to), subject, body)
             mylli.send_email(mail_obj)
     elif args[0] == "stats":
         #return stats
