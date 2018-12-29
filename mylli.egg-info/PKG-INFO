@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: mylli
+Version: 0.0.0
+Summary: Simple Mailing Client
+Home-page: https://github.com/ignertic/mylli
+Author: Gishobert (SuperCode) Gwenzi
+Author-email: ilovebugsincode@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/plain

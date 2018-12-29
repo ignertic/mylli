@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+setup.py
+mylli/__init__.py
+mylli/__main__.py
+mylli/mailing_list.xo
+mylli/model.py
+mylli.egg-info/PKG-INFO
+mylli.egg-info/SOURCES.txt
+mylli.egg-info/dependency_links.txt
+mylli.egg-info/entry_points.txt
+mylli.egg-info/requires.txt
+mylli.egg-info/top_level.txt
