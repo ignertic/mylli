@@ -7,9 +7,9 @@ import io
 import queue
 import sendgrid
 import threading
-from sendgrid.helpers.mail import *
 
-from . import cache
+
+from . import engineapi
 # TODO: Create Stats Model
 
 FROM = uname().node+"@mylli.supercode.xo"
@@ -32,7 +32,7 @@ class MailingList(object):
         super(MailingList, self).__init__()
         self.mails = mails
         self.delay = 5
-        if api_key is None: self.api = sendgrid.SendGridAPIClient(cache.key)
+        
         self.mail_queue = queue.Queue(100) #maximum Sendgrid limit
         #load date
 
@@ -114,11 +114,10 @@ class MailingList(object):
         while not self.mail_queue.empty():
             #sendgrid adn send
             # TODO: Error Handling
-            _mail = self.mail_queue.get()
-            content = Content("text/plain", _mail.body) #Mail class may be redudant
-            mail = Mail(Email(_mail.mFrom), _mail.subject, Email(_mail.to), content)
-            response = api.client.mail.send.post(request_body=mail.get())
-            log.debug(response.status_code)
-            log.info("[+]Email Sent to {} from {}".format(_mail.to, _mail.mFrom))
+            mail_package = self.mail_queue.get()
+            res =engineapi.send(mail_package.mFrom, mail_package.to, mail_package.subject, mail_package.body)
+            log.debug(res.status_code)
+
+
 
 test = MailingList()

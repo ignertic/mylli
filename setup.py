@@ -1,5 +1,5 @@
 from setuptools import setup
-
+import setuptools
 with open("README.md", 'r') as fh:
     long_description = fh.read()
 
@@ -17,7 +17,7 @@ setup(name="mylli",
 	classifiers=[
 		"Programming Language :: Python :: 3",
 		"Operating System :: OS Independent"],
-	packages=["mylli"],
+	packages=setuptools.find_packages(),
 	include_package_data=True,
 	install_requires=["requests", ],
 	entry_points={"console_scripts" : ["mylli=mylli.__main__:main" ]},
