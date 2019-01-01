@@ -87,3 +87,6 @@ def main():
         f=Figlet(random.choice(figFonts))
         print(f.renderText("mylli"))
         print("Bye!!!!")
+
+if __name__ == '__main__':
+    main()
