@@ -19,6 +19,6 @@ setup(name="mylli",
 		"Operating System :: OS Independent"],
 	packages=setuptools.find_packages(),
 	include_package_data=True,
-	install_requires=["requests", ],
+	install_requires=["requests","sendgrid", "loguru" ],
 	entry_points={"console_scripts" : ["mylli=mylli.__main__:main" ]},
 	) # TODO: Add more console scripts

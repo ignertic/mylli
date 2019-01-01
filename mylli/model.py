@@ -11,7 +11,8 @@ import threading
 
 from . import engineapi
 # TODO: Create Stats Model
-
+k=open("mailing_list.xo", "a")
+k.close()
 FROM = uname().node+"@mylli.supercode.xo"
 # TODO: Create Custom Queue class
 class sMail(object):
@@ -32,7 +33,7 @@ class MailingList(object):
         super(MailingList, self).__init__()
         self.mails = mails
         self.delay = 5
-        
+
         self.mail_queue = queue.Queue(100) #maximum Sendgrid limit
         #load date
 
