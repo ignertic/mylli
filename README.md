@@ -4,7 +4,7 @@ Mylli
 Mylli is a cli tool for instant emails.
 
 Installation
->pip install mylli
+>sudo -H pip install mylli
 
 
 Usage
