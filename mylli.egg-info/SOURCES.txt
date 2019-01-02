@@ -3,6 +3,7 @@ README.md
 setup.py
 mylli/__init__.py
 mylli/__main__.py
+mylli/engineapi.py
 mylli/mailing_list.xo
 mylli/model.py
 mylli.egg-info/PKG-INFO

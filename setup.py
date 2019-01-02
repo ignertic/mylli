@@ -3,7 +3,7 @@ import setuptools
 with open("README.md", 'r') as fh:
     long_description = fh.read()
 
-__version__ = "0.0.1"
+__version__ = "0.1.0"
 
 setup(name="mylli",
 	version="0.0.0",
