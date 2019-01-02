@@ -2,9 +2,14 @@ import sendgrid
 from sendgrid.helpers.mail import *
 import random
 
-
-with open("key", 'r') as fh:
-    keys=fh.read()
+try:
+    with open("key", 'r') as fh:
+        keys=fh.read()
+except FileNotFoundError as e:
+    with open("key", "w") as fh:
+        KEY=str(input("Paste Key:  "))
+        fh.write(KEY)
+        keys=KEY
 
 
 def send(from_email, to_email, subject, body):
