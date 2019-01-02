@@ -6,7 +6,7 @@ with open("README.md", 'r') as fh:
 __version__ = "0.1.0"
 
 setup(name="mylli",
-	version="0.0.0",
+	version="0.1.0",
 	description="Simple Mailing Client",
 	long_description=long_description,
 	long_description_content_type="text/markdown",
