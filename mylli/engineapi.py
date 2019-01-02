@@ -1,11 +1,14 @@
 import sendgrid
 from sendgrid.helpers.mail import *
 import random
-key = ['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','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']
+
+
+with open("key", 'r') as fh:
+    keys=fh.read()
 
 
 def send(from_email, to_email, subject, body):
-    sg = sendgrid.SendGridAPIClient(apikey=random.choice(key))
+    sg = sendgrid.SendGridAPIClient(apikey=keys)
     from_email = Email(from_email)
     to_email = Email(to_email)
     content = Content('text/plain', body)

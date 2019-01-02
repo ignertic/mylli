@@ -63,6 +63,10 @@ def main():
         subject, mFrom, body = args[1:]
         mylli.broadcast(subject, mFrom, body)
 
+    elif args[0] == "configure":
+        KEY=str(input("Sendgrid Key"))
+        mylli.set_key(KEY)
+
     elif args[0] == "mailist":
         #return numbered list of mails in list
         print(mylli.get_mailing_list())

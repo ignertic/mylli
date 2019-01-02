@@ -33,6 +33,7 @@ class MailingList(object):
         super(MailingList, self).__init__()
         self.mails = mails
         self.delay = 5
+        self.KEY = None
 
         self.mail_queue = queue.Queue(100) #maximum Sendgrid limit
         #load date
@@ -119,6 +120,10 @@ class MailingList(object):
             res =engineapi.send(mail_package.mFrom, mail_package.to, mail_package.subject, mail_package.body)
             log.debug(res.status_code)
 
+    @staticmethod
+    def set_key(lkey):
+        with io.open("key", "w") as fh:
+            fh.write(lkey)
 
 
 test = MailingList()
