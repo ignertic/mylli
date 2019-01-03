@@ -7,7 +7,7 @@ try:
         keys=fh.read()
 except FileNotFoundError as e:
     with open("key", "w") as fh:
-        KEY=str(input("Paste Key:  "))
+        KEY=str(input("Paste SendGrid API Key:  "))
         fh.write(KEY)
         keys=KEY
 
@@ -19,6 +19,4 @@ def send(from_email, to_email, subject, body):
     content = Content('text/plain', body)
     mail = Mail(from_email, subject, to_email, content)
     response = sg.client.mail.send.post(request_body=mail.get())
-    print('sent email')
-    print(response.status_code)
     return response

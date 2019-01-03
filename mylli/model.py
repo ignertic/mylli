@@ -17,7 +17,6 @@ class sMail(object):
         self.body = body
 
     def __call__(self):
-        #return tuple
         return (self.mFrom,  self.subject,self.to, self.body)
 
 
@@ -79,12 +78,14 @@ class MailingList(object):
 
 
     def clear_queue(self):
-
         while not self.mail_queue.empty():
             mail_package = self.mail_queue.get()
             try:
                 res =engineapi.send(mail_package.mFrom, mail_package.to, mail_package.subject, mail_package.body)
                 log.debug(res.status_code+" Sent!!")
+            except:
+                log.error("Failed to send")
+
 
 
     @staticmethod
