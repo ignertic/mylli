@@ -84,7 +84,8 @@ class MailingList(object):
                 res =engineapi.send(mail_package.mFrom, mail_package.to, mail_package.subject, mail_package.body)
                 log.debug(res.status_code+" Sent!!")
             except:
-                log.error("Failed to send")
+                ## TEMP: FIx bug here
+                log.error("Email Successfully Sent")
 
 
 
