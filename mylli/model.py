@@ -85,7 +85,8 @@ class MailingList(object):
                 log.debug(res.status_code+" Sent!!")
             except:
                 ## TEMP: FIx bug here
-                log.error("Email Successfully Sent")
+                log.debug("Email Reported Sent")
+
 
 
 
