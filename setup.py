@@ -3,10 +3,10 @@ import setuptools
 with open("README.md", 'r') as fh:
     long_description = fh.read()
 
-__version__ = "0.2.2"
+__version__ = "0.2.3"
 
 setup(name="mylli",
-	version="0.2.2",
+	version="0.2.3",
 	description="Simple Mailing Client",
 	long_description=long_description,
 	long_description_content_type="text/markdown",
